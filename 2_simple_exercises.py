@@ -46,6 +46,6 @@ dict = {
 }
 
 
-dict["work"] = "Apology", "Phaedo", "Republic", "Symposium"
+dict["work"] = ["Apology", "Phaedo", "Republic", "Symposium"]
 
 print(dict)
