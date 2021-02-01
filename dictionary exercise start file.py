@@ -2,6 +2,7 @@
 
 def main():
     # Create a deck of cards.
+   create_deck()
    
 
     # Get the number of cards to deal.
@@ -10,7 +11,7 @@ def main():
 
 
     # Deal the cards.
-
+    deal_cards()
 
     
     
@@ -45,7 +46,7 @@ def create_deck():
             'Queen of Diamonds':10, 'King of Diamonds': 10}
 
     # Return the deck.
-
+    deck()
 
 
 
@@ -54,24 +55,32 @@ def create_deck():
 
 def deal_cards(deck, number):
     # Initialize an accumulator for the hand value.
-
+    hand = 0
+    number = hand + 
     
     
 
     # Make sure the number of cards to deal is not
     # greater than the number of cards in the deck.
+    '''cards_left = 52
+    cards_dealt = cards_left - num_cards'''
 
+    hand = deck - num_cards
+
+    deck = deck - num_cards
     
     
 
     # Deal the cards and accumulate their values.
-    
+    deal_cards()
+    for pair in deck.items():
+        print(pair)
 
 
     
 
     # Display the value of the hand.
-
+    print(hand)
     
     
 
