@@ -1,15 +1,20 @@
 # This program uses a dictionary as a deck of cards.
+import random
 
 
 def main():
     # Create a deck of cards.
-    create_deck()
+    deck = create_deck()
+    """you messed ^this up--> no variable assignment"""
 
     # Get the number of cards to deal.
     num_cards = int(input("How many cards should I deal? "))
+    if num_cards in deck:
+        print()
 
     # Deal the cards.
-    deal_cards(deck, number)
+    deal_cards(deck, num_cards)
+    """you messed ^this up--> num_cards not number"""
 
 
 # The create_deck function returns a dictionary
@@ -82,28 +87,45 @@ def create_deck():
 
 def deal_cards(deck, number):
     # Initialize an accumulator for the hand value.
-    number = 0
-    number = number + num_cards
+    hand_value = 0
 
     # Make sure the number of cards to deal is not
     # greater than the number of cards in the deck.
-    """cards_left = 52
-    cards_dealt = cards_left - num_cards
-    len(deck)"""
-
-    deck = deck - num_cards
-
-    if deck < num_cards:
-        num_cards = deck
-        print("You can only deal the remaining card in the deck.")
+    if number > len(deck):
+        number = len(deck)
+    """you messed ^this up --> whole thing was wrong"""
 
     # Deal the cards and accumulate their values.
-    for pair in deck.items():
-        print(pair)
+    """
+    for count in range(number):
+        card, value = deck.popitem()
+        print(card)
+   
+    ^above and portion below are seperate
+
+    
+    list_of_keys = []
+
+    
+    for key in deck:
+        list_of_keys.append(key)
+
+    print(list_of_keys)"""
+
+    for count in range(number):
+        card = random.choice(list(deck))
+        value = deck[card]
+        """random only works on lists not dictionaries"""
+
+        print(card)
+
+        hand_value += value
+        del deck[card]
+        """you messed ^this up --> alllll of it was far off"""
 
     # Display the value of the hand.
-    return deck, number
-    print(hand)
+    print("Value of the hand is ", hand_value)
+    """you messed ^this up --> close but use hand_value not hand"""
 
 
 # Call the main function.
