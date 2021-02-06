@@ -1,15 +1,23 @@
-def count_words(filename):
-    """Count the approximate number of words in a file."""
-    try:
-        with open(filename, encoding="utf-8") as f:
-            contents = f.read()
-    except FileNotFoundError:
-        pass
-    else:
+dictionary = {}
+
+
+def main():
+    text_file()
+
+
+def text_file():
+    with open("text.txt") as file_object:
+        contents = file_object.read()
         words = contents.split()
         num_words = len(words)
-        print(f"The file {filename} has about {num_words} words.")
+
+    for word in words[:]:
+        if word not in dictionary:
+            dictionary[word] = words.count(word)
+        total = dictionary.get(word, "")
+
+    print(dictionary)
+    return dictionary
 
 
-filename = "text.txt"
-count_words(filename)
+main()
