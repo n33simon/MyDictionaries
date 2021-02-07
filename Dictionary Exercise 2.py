@@ -10,7 +10,7 @@ def main():
 
     # prompt user
     winner_record = int(
-        input("What year would you like to know the World Series Winner? ")
+        input("What year would you like to know the World Series Winner (1903-2008?) ")
     )
 
     # create dictionary 1
@@ -20,7 +20,7 @@ def main():
     series = dict_2(lines, index)
 
     # get Series and Record finding
-    output()
+    output(winner_record)
 
 
 def create_lines():
@@ -35,7 +35,7 @@ def dict_1(lines):
     for line in lines:
         if line not in roster:
             roster[line] = lines.count(line)
-    print(roster)
+    # print(roster)
     return roster
 
 
@@ -44,17 +44,26 @@ def dict_2(lines, index):
         if index not in series_record:
             series_record[index] = line
             index += 1
+    # print(series_record)
     return series_record
-    print(series_record)
 
 
-def output(winner_record, roster, series_record):
-    winner = series_record.get(winner_record)
-    record = roster.get(winner)
-    return winner
-    return record
+def output(winner_record):
+    for k in series_record:
+        choice = series_record.__getitem__(int(winner_record))
+        # print(choice)   <---prints out the team in correct format but too many times
 
-    # print(lines)
-    print(winner)
-    print(record)
-    main()
+    for v in roster:
+        team = roster.__getitem__(str(choice))
+        # print(team)   <--prints out the record too many times
+
+    print(
+        "The winning team was the:"
+        + "\n"
+        + choice
+        + "A total amount of World Series wins:"
+    )
+    print(team)
+
+
+main()

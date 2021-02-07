@@ -17,3 +17,5 @@ def main():
 
 
 main()
+
+# the instructions did not ask for the words recorded with or without capitalizing difference so I did not add it in
